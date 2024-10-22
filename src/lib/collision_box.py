@@ -13,7 +13,7 @@ class CollisionBox:
 
     def collides_with(self, other: "CollisionBox") -> bool:
         return self.box.colliderect(other.box)
-    
+
     def render(self, surface: pygame.Surface) -> None:
         """
         This render method if for debugging purposes. It draws a red rectangle.
