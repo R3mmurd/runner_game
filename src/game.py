@@ -3,7 +3,6 @@ import sys
 import pygame
 
 import settings
-from src.stage import Stage
 
 
 class Game:
