@@ -41,20 +41,20 @@ BACKGROUND_LOOP_POINT = 2883
 # Ground settings
 GROUND_HEIGHT = 42
 
-# Tick time for the game loop (in seconds) (60 FPS)
-TICK_TIME = 0.016666667
+# Maximum frames per second
+MAX_FPS = 60
 
 # Gravity
-GRAVITY = 0.5
+GRAVITY = 980
 
 TEXTURES = {
-    "background": BASE_DIR / "assets" / "textures" "background.png",
-    "ground": BASE_DIR / "assets" / "textures" "ground.png",
-    "bunny": BASE_DIR / "assets" / "textures" "bunny.png",
+    "background": pygame.image.load(BASE_DIR / "assets" / "textures" / "background.png"),
+    "ground": pygame.image.load(BASE_DIR / "assets" / "textures" / "ground.png"),
+    "bunny": pygame.image.load(BASE_DIR / "assets" / "textures" / "bunny.png"),
 }
 
 FRAMES = {
-    "bunny": [
+    "bunny_run": [
         pygame.Rect(0, 0, 250, 333.5),
         pygame.Rect(250, 0, 250, 333.5),
         pygame.Rect(500, 0, 250, 333.5),
@@ -63,7 +63,13 @@ FRAMES = {
         pygame.Rect(250, 333.5, 250, 333.5),
         pygame.Rect(500, 333.5, 250, 333.5),
         pygame.Rect(750, 333.5, 250, 333.5),
-    ]
+    ],
+    "bunny_idle": [
+        pygame.Rect(0, 0, 250, 333.5),
+    ],
+    "bunny_jump": [
+        pygame.Rect(750, 0, 250, 333.5),
+    ],
 }
 
 pygame.mixer.music.load(BASE_DIR / "assets" / "sounds" / "happy_little.mp3")

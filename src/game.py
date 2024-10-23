@@ -3,6 +3,7 @@ import sys
 import pygame
 
 import settings
+from src.stage import Stage
 
 
 class Game:
@@ -13,7 +14,7 @@ class Game:
         self.running = False
 
         # Add stage
-
+        
         # Add character
 
     def handle_inputs(self, event: pygame.event.Event) -> None:
@@ -35,7 +36,7 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     self.handle_inputs(event)
 
-            dt = self.clock.tick(settings.TICK_TIME) / 1000.0
+            dt = self.clock.tick(settings.MAX_FPS) / 1000.0
             self.update(dt)
             self.render()
 
