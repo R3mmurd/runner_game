@@ -23,20 +23,23 @@ WINDOW_SIZE = (WINDOW_WIDTH, WINDOW_HEIGHT)
 
 # Character settings
 CHARACTER_WIDTH = 250
-CHARACTER_HEIGHT = 333.5
+CHARACTER_HEIGHT = 233
 
 # Character collision box settings
-CHARACTER_COLLISSION_BOX_X = 110
-CHARACTER_COLLISSION_BOX_Y = 110
+CHARACTER_COLLISION_BOX_X = 110
 CHARACTER_COLLISION_BOX_WIDTH = 110
-CHARACTER_COLLISION_BOX_HEIGHT = 207
+CHARACTER_COLLISION_BOX_HEIGHT = 233
+
+JUMP_TAKEOFF_SPEED = 1100
 
 # Block settings
 BLOCK_WIDTH = 70
 BLOCK_HEIGHT = 70
 
 # Background settings
-BACKGROUND_LOOP_POINT = 2883
+BACKGROUND_LOOPING_POINT = 2883
+MAIN_SCROLL_SPEED = -250
+BACK_SCROLL_SPEED = -125
 
 # Ground settings
 GROUND_HEIGHT = 42
@@ -45,7 +48,7 @@ GROUND_HEIGHT = 42
 MAX_FPS = 60
 
 # Gravity
-GRAVITY = 980
+GRAVITY = 2450
 
 TEXTURES = {
     "background": pygame.image.load(BASE_DIR / "assets" / "textures" / "background.png"),
@@ -55,20 +58,20 @@ TEXTURES = {
 
 FRAMES = {
     "bunny_run": [
-        pygame.Rect(0, 0, 250, 333.5),
-        pygame.Rect(250, 0, 250, 333.5),
-        pygame.Rect(500, 0, 250, 333.5),
-        pygame.Rect(750, 0, 250, 333.5),
-        pygame.Rect(0, 333.5, 250, 333.5),
-        pygame.Rect(250, 333.5, 250, 333.5),
-        pygame.Rect(500, 333.5, 250, 333.5),
-        pygame.Rect(750, 333.5, 250, 333.5),
+        pygame.Rect(0, 85, 250, 233),
+        pygame.Rect(250, 85, 250, 233),
+        pygame.Rect(500, 85, 250, 233),
+        pygame.Rect(750, 85, 250, 233),
+        pygame.Rect(0, 346, 250, 233),
+        pygame.Rect(250, 346, 250, 233),
+        pygame.Rect(500, 346, 250, 233),
+        pygame.Rect(750, 346, 250, 233),
     ],
     "bunny_idle": [
-        pygame.Rect(0, 0, 250, 333.5),
+        pygame.Rect(0, 85, 250, 233),
     ],
     "bunny_jump": [
-        pygame.Rect(750, 0, 250, 333.5),
+        pygame.Rect(750, 346, 250, 233),
     ],
 }
 

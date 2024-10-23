@@ -3,6 +3,8 @@ import sys
 import pygame
 
 import settings
+from src.character import Character
+from src.stage import Stage
 
 
 class Game:
@@ -13,17 +15,26 @@ class Game:
         self.running = False
 
         # Add stage
+        self.stage = Stage()
         
         # Add character
+        self.character = Character(self.stage)
 
     def handle_inputs(self, event: pygame.event.Event) -> None:
-        pass
+        if event.key == pygame.K_ESCAPE:
+            self.running = False
+        elif event.key == pygame.K_SPACE:
+            self.character.jump()
 
     def update(self, dt: float) -> None:
-        pass
+        self.stage.update(dt)
+        self.character.update(dt) 
 
     def render(self) -> None:
-        pass
+        self.screen.fill((0, 0, 0))
+        self.stage.render(self.screen)
+        self.character.render(self.screen)
+        pygame.display.update()
 
     def run(self) -> None:
         self.running = True
