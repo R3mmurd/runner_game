@@ -7,8 +7,7 @@ from src.stage import Stage
 
 class Character:
     def __init__(self, stage: Stage) -> None:
-        self.stage = Stage()
-
+        self.stage = stage
         self.x = settings.WINDOW_WIDTH // 2 - settings.CHARACTER_WIDTH // 2
         self.y = settings.WINDOW_HEIGHT - settings.GROUND_HEIGHT - settings.CHARACTER_HEIGHT
         self.width = settings.CHARACTER_WIDTH
@@ -20,11 +19,18 @@ class Character:
             "run": Animation(settings.FRAMES["bunny_run"], 0.1),
             "jump": Animation(settings.FRAMES["bunny_jump"])
         }
+
         self.current_animation = self.animations["run"]
 
         self.vy = 0
         self.on_ground = True
         self.active = True
+
+    def start_running(self) -> None:
+        self.change_animation("run")
+
+    def set_idle(self) -> None:
+        self.change_animation("idle")
     
     def jump(self) -> None:
         if self.on_ground:
@@ -39,7 +45,7 @@ class Character:
         self.current_animation = anim
 
     def get_collision_box(self) -> CollisionBox:
-        return CollisionBox(self.x + settings.CHARACTER_COLLISION_BOX_X, self.y, settings.CHARACTER_COLLISION_BOX_WIDTH, settings.CHARACTER_COLLISION_BOX_HEIGHT)
+        return CollisionBox(self.x + settings.CHARACTER_COLLISION_BOX_X, self.y, settings.CHARACTER_COLLISION_BOX_WIDTH, self.height)
 
     def update(self, dt: float) -> None:
         self.current_animation.update(dt)
