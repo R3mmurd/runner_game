@@ -25,18 +25,19 @@ WINDOW_SIZE = (WINDOW_WIDTH, WINDOW_HEIGHT)
 CHARACTER_WIDTH = 250
 CHARACTER_HEIGHT = 233
 CHARACTER_COLLISION_BOX_X = 110
-CHARACTER_COLLISION_BOX_WIDTH = 110
+CHARACTER_COLLISION_BOX_Y = 30
+CHARACTER_COLLISION_BOX_WIDTH = 80
 JUMP_TAKEOFF_SPEED = 1100
 
 # Block settings
 BLOCK_WIDTH = 70
 BLOCK_HEIGHT = 70
-TIME_BETWEEN_BLOCKS = 1.5
+TIME_BETWEEN_BLOCKS = 1.8
 
 # Background settings
 BACKGROUND_LOOPING_POINT = 2883
-MAIN_SCROLL_X_VELOCITY = -250
-BACK_SCROLL_X_VELOCITY = -125
+MAIN_SCROLL_X_VELOCITY = -400
+BACK_SCROLL_X_VELOCITY = -200
 
 # Ground settings
 GROUND_HEIGHT = 42
@@ -48,7 +49,9 @@ MAX_FPS = 60
 GRAVITY = 2450
 
 TEXTURES = {
-    "background": pygame.image.load(BASE_DIR / "assets" / "textures" / "background.png"),
+    "background": pygame.image.load(
+        BASE_DIR / "assets" / "textures" / "background.png"
+    ),
     "ground": pygame.image.load(BASE_DIR / "assets" / "textures" / "ground.png"),
     "bunny": pygame.image.load(BASE_DIR / "assets" / "textures" / "bunny.png"),
     "block": pygame.image.load(BASE_DIR / "assets" / "textures" / "block.png"),
@@ -82,6 +85,6 @@ SOUNDS = {
 }
 
 FONTS = {
-    "small": pygame.font.Font(BASE_DIR / "assets" / "fonts" / "game_changer.ttf", 8),
-    "medium": pygame.font.Font(BASE_DIR / "assets" / "fonts" / "game_changer.ttf", 16),
+    "small": pygame.font.Font(BASE_DIR / "assets" / "fonts" / "game_changer.ttf", 96),
+    "medium": pygame.font.Font(BASE_DIR / "assets" / "fonts" / "game_changer.ttf", 256),
 }

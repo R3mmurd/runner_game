@@ -4,7 +4,7 @@ import settings
 from src.lib.collision_box import CollisionBox
 
 
-class Box:
+class Block:
     def __init__(self, x: float, y: float, width: float, height: float):
         self.x = x
         self.y = y
@@ -12,6 +12,7 @@ class Box:
         self.height = height
         self.texture = settings.TEXTURES["block"]
         self.active = True
+        self.scored = False
 
     def get_collision_box(self) -> CollisionBox:
         return CollisionBox(self.x, self.y, self.width, self.height)
@@ -24,3 +25,4 @@ class Box:
 
     def render(self, surface: pygame.Surface) -> None:
         surface.blit(self.texture, (self.x, self.y))
+        #self.get_collision_box().render(surface)
