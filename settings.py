@@ -51,6 +51,7 @@ TEXTURES = {
     "background": pygame.image.load(BASE_DIR / "assets" / "textures" / "background.png"),
     "ground": pygame.image.load(BASE_DIR / "assets" / "textures" / "ground.png"),
     "bunny": pygame.image.load(BASE_DIR / "assets" / "textures" / "bunny.png"),
+    "block": pygame.image.load(BASE_DIR / "assets" / "textures" / "block.png"),
 }
 
 FRAMES = {
