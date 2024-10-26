@@ -84,4 +84,4 @@ class Character:
         surface.blit(
             self.texture, (self.x, self.y), self.current_animation.get_current_frame()
         )
-        self.get_collision_box().render(surface)
+        # self.get_collision_box().render(surface)
