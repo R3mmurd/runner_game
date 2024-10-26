@@ -24,27 +24,24 @@ WINDOW_SIZE = (WINDOW_WIDTH, WINDOW_HEIGHT)
 # Character settings
 CHARACTER_WIDTH = 250
 CHARACTER_HEIGHT = 233
-
-# Character collision box settings
 CHARACTER_COLLISION_BOX_X = 110
 CHARACTER_COLLISION_BOX_WIDTH = 110
-CHARACTER_COLLISION_BOX_HEIGHT = 233
-
 JUMP_TAKEOFF_SPEED = 1100
 
 # Block settings
 BLOCK_WIDTH = 70
 BLOCK_HEIGHT = 70
+TIME_BETWEEN_BLOCKS = 1.5
 
 # Background settings
 BACKGROUND_LOOPING_POINT = 2883
-MAIN_SCROLL_SPEED = -250
-BACK_SCROLL_SPEED = -125
+MAIN_SCROLL_X_VELOCITY = -250
+BACK_SCROLL_X_VELOCITY = -125
 
 # Ground settings
 GROUND_HEIGHT = 42
 
-# Maximum frames per second
+# Tick time for the game loop (in seconds) (60 FPS)
 MAX_FPS = 60
 
 # Gravity
@@ -54,6 +51,7 @@ TEXTURES = {
     "background": pygame.image.load(BASE_DIR / "assets" / "textures" / "background.png"),
     "ground": pygame.image.load(BASE_DIR / "assets" / "textures" / "ground.png"),
     "bunny": pygame.image.load(BASE_DIR / "assets" / "textures" / "bunny.png"),
+    "block": pygame.image.load(BASE_DIR / "assets" / "textures" / "block.png"),
 }
 
 FRAMES = {
