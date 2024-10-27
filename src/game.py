@@ -16,11 +16,13 @@ class Game:
         
         # Add character
 
-    def handle_inputs(self, event: pygame.event.Event) -> None:
-        pass
+    def handle_inputs(self) -> None:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
 
-    def update(self, dt: float) -> None:
-        pass
+    def update(self) -> None:
+        dt = self.clock.tick(settings.MAX_FPS) / 1000.0
 
     def render(self) -> None:
         pass
@@ -29,14 +31,8 @@ class Game:
         self.running = True
 
         while self.running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-                elif event.type == pygame.KEYDOWN:
-                    self.handle_inputs(event)
-
-            dt = self.clock.tick(settings.MAX_FPS) / 1000.0
-            self.update(dt)
+            self.handle_inputs()
+            self.update()
             self.render()
 
         pygame.font.quit()
