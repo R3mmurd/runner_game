@@ -40,13 +40,19 @@ class Game:
         self.counter_timer = 0
         self.score = 0
 
-    def handle_inputs(self, event: pygame.event.Event) -> None:
-        if event.key == pygame.K_ESCAPE:
-            self.running = False
-        elif not self.starting and event.key == pygame.K_SPACE:
-            self.character.jump()
+    def handle_inputs(self) -> None:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.running = False
+                elif not self.starting and event.key == pygame.K_SPACE:
+                    self.character.jump()
 
-    def update(self, dt: float) -> None:
+    def update(self) -> None:
+        dt = self.clock.tick(settings.MAX_FPS) / 1000.0
+
         if self.starting:
             self.counter_timer += dt
             if self.counter_timer >= 1:
@@ -102,14 +108,8 @@ class Game:
         self.running = True
 
         while self.running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-                elif event.type == pygame.KEYDOWN:
-                    self.handle_inputs(event)
-
-            dt = self.clock.tick(settings.MAX_FPS) / 1000.0
-            self.update(dt)
+            self.handle_inputs()
+            self.update()
             self.render()
 
         pygame.font.quit()
