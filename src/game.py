@@ -83,7 +83,7 @@ class Game:
         if self.starting:
             render_text(
                 self.screen,
-                f"{self.counter}",
+                str(self.counter),
                 settings.FONTS["medium"],
                 settings.WINDOW_WIDTH // 2,
                 settings.WINDOW_HEIGHT // 2,
@@ -94,7 +94,7 @@ class Game:
 
         render_text(
             self.screen,
-            f"Score: {self.score}",
+            "Score: " + str(self.score),
             settings.FONTS["small"],
             settings.WINDOW_WIDTH - 300,
             40,
