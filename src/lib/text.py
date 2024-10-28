@@ -20,8 +20,8 @@ def render_text(
     center: bool = False,
     shadowed: bool = False,
 ):
-    text_obj: pygame.Surface = font.render(text, True, color, bg_color)
-    text_rect: pygame.Rect = text_obj.get_rect()
+    text_obj = font.render(text, True, color, bg_color)
+    text_rect = text_obj.get_rect()
 
     if center:
         text_rect.center = (x, y)
@@ -30,8 +30,8 @@ def render_text(
         text_rect.y = y
 
     if shadowed:
-        shadow_text: pygame.Surface = font.render(text, True, (0, 0, 0))
-        shadow_rect: pygame.Rect = shadow_text.get_rect()
+        shadow_text = font.render(text, True, (0, 0, 0))
+        shadow_rect = shadow_text.get_rect()
         shadow_rect.x = text_rect.x + 1
         shadow_rect.y = text_rect.y + 1
         surface.blit(shadow_text, shadow_rect)

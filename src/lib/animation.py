@@ -4,7 +4,7 @@ This file contains the implementation of the class Animation.
 Author: Alejandro Mujica (aledrums@gmail.com)
 """
 
-from typing import Sequence
+from typing import Any, Sequence
 
 
 class Animation:
@@ -13,18 +13,18 @@ class Animation:
     frames change in a given time interval.
     """
 
-    def __init__(self, frames: Sequence[any], time_interval: float = 0) -> None:
+    def __init__(self, frames: Sequence[Any], time_interval: float = 0) -> None:
         """
         Initialize a new Animation.
 
         :param frames: Sequence of frames
         :param time_interval: Duration time (in seconds) of each frame.
         """
-        self.__frames: Sequence[any] = frames
-        self.__interval: float = time_interval
-        self.__size: int = len(self.__frames)
-        self.__timer: float = 0
-        self.__current_frame_index: int = 0
+        self.__frames = frames
+        self.__interval = time_interval
+        self.__size = len(self.__frames)
+        self.__timer = 0
+        self.__current_frame_index = 0
 
     def update(self, dt: float) -> None:
         """
