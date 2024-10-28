@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).parent
 #
 
 # Window settings
-WINDOW_WIDTH = 1280
+WINDOW_WIDTH = 920
 WINDOW_HEIGHT = 720
 WINDOW_SIZE = (WINDOW_WIDTH, WINDOW_HEIGHT)
 
@@ -42,8 +42,8 @@ BACK_SCROLL_X_VELOCITY = -200
 # Ground settings
 GROUND_HEIGHT = 42
 
-# Tick time for the game loop (in seconds) (60 FPS)
-MAX_FPS = 60
+# Tick time for the game loop (in seconds) (30 FPS)
+MAX_FPS = 30
 
 # Gravity
 GRAVITY = 2450
