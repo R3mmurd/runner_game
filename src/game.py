@@ -58,6 +58,7 @@ class Game:
             if self.counter_timer >= 1:
                 self.counter_timer = 0
                 self.counter -= 1
+                settings.SOUNDS["clock"].play()
 
                 if self.counter == 0:
                     self.start()
